@@ -1,38 +1,29 @@
 snippet a-ngClass "Angular ngClass snippet" i
-[ngClass]="{${1:cssClass}: ${2:expression}}"
-endsnippet
+	[ngClass]="{${1:cssClass}: ${2:expression}}"
 
 snippet a-ngFor "Angular *ngFor snippet" i
-*ngFor="let ${1:item} of ${2:list}"
-endsnippet
+	*ngFor="let ${1:item} of ${2:list}"
 
 snippet a-ngIf "Angular *ngIf snippet" i
-*ngIf="${1:expression}"
-endsnippet
+	*ngIf="${1:expression}"
 
 snippet a-ngModel "Angular ngModel snippet" i
-[(ngModel)]=${1:binding}"
-endsnippet
+	[(ngModel)]=${1:binding}"
 
 snippet a-routerLink "Angular routerLink snippet" i
-[routerLink]=['/${1:routeName}']
-endsnippet
+	[routerLink]=['/${1:routeName}']
 
 snippet a-ngStyle "Angular ngStyle snippet" i
-[ngStyle]={${1:style}: ${2:expression}}
-endsnippet
+	[ngStyle]={${1:style}: ${2:expression}}
 
 snippet a-ngSwitch "Angular ngSwitch snippet" i
-<div [ngSwitch]=${1:conditionExpression}>
-	<div *ngSwitchCase=${2:expression}>${3:output}</div>
-	<div *ngSwitchDefault>${4:output2}</div>
-</div>
-endsnippet
+	<div [ngSwitch]=${1:conditionExpression}>
+		<div *ngSwitchCase=${2:expression}>${3:output}</div>
+		<div *ngSwitchDefault>${4:output2}</div>
+	</div>
 
 snippet a-prej "Angular pre debug | json" i
-<pre>{{$1 | json}}</pre>$2
-endsnippet
+	<pre>{{$1 | json}}</pre>$2
 
 snippet a-preja "Angular pre debug | async | json" i
-<pre>{{$1 | async | json}}</pre>$2
-endsnippet
+	<pre>{{$1 | async | json}}</pre>$2
