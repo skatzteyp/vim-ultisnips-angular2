@@ -37,11 +37,16 @@ snippet a-routing "Angular routing file snippet" i
 	import { ${1:Name}Component } from './${2:name}.component';
 
 	const routes: Routes = [
-		{ path: '${3:path}', component: ${4:Name}Component },
+		{
+			path: '${3:path}',
+			component: ${4:Name}Component
+		},
+		children: [
+		]
 	];
 
 	@NgModule({
-		imports: [RouterModule.for${5:Child|Root}(routes)],
+		imports: [RouterModule.forChild(routes)],
 		exports: [RouterModule],
 	})
 	export class ${6:Name}RoutingModule { }
@@ -101,3 +106,13 @@ snippet a-module "Angular Module snippet" i
 		providers: [],
 	})
 	export class ${4:Name}Module { }
+snippet a-lazy-module "Angular Lazy Module snipper" i
+	import { NgModule } from '@angular/core';
+
+	import { routedComponents, ${1:Name}RoutingModule } from './${2:name}-routing.module';
+
+	@NgModule({
+		imports: [${1:Name}RoutingModule],
+		declarations: [routedComponents],
+	})
+	export class ${1:Name}Module { }
