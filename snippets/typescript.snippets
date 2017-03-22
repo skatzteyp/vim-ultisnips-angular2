@@ -2,14 +2,16 @@ snippet a-component "Angular component snippet" i
 	import { Component, OnInit } from '@angular/core';
 
 	@Component({
-		moduleId: module.id,
 		selector: '${1:selector}',
-		templateUrl: '${2:feature}.component.html'
+		templateUrl: '${2:feature}.component.html',
+		styleUrls: ['${3:feature}.component.scss']
 	})
-	export class ${3:Feature}Component implements OnInit {
+	export class ${4:Feature}Component implements OnInit {
+
 		constructor() { }
 
 		ngOnInit() { }$0
+
 	}
 snippet a-service "Angular service snippet" i
 	import { Injectable } from '@angular/core';
@@ -18,6 +20,7 @@ snippet a-service "Angular service snippet" i
 	export class ${1:ServiceName}Service {
 		$0
 		constructor() { }
+
 	}
 snippet a-pipe "Angular pipe snippet" i
 	import { Pipe, PipeTransform } from '@angular/core';
@@ -26,9 +29,11 @@ snippet a-pipe "Angular pipe snippet" i
 		name: '${1:name}'
 	})
 	export class ${2:PipeName}Pipe implements PipeTransform {
+
 		transform(value: any, ...args: any[]): any {
 			$0
 		}
+
 	}
 snippet a-routing "Angular routing file snippet" i
 	import { NgModule } from '@angular/core';
@@ -106,7 +111,7 @@ snippet a-module "Angular Module snippet" i
 		providers: [],
 	})
 	export class ${4:Name}Module { }
-snippet a-lazy-module "Angular Lazy Module snipper" i
+snippet a-lazy-module "Angular Lazy Module snippet" i
 	import { NgModule } from '@angular/core';
 
 	import { routedComponents, ${1:Name}RoutingModule } from './${2:name}-routing.module';
@@ -116,3 +121,14 @@ snippet a-lazy-module "Angular Lazy Module snipper" i
 		declarations: [routedComponents],
 	})
 	export class ${4:Name}Module { }
+snippet a-directive "Angular Directive snippet" i
+	import { Directive } from '@angular/core';
+
+	@Directive({
+		selector: '[${1:name}]'
+	})
+	export class ${2:Name}Directive {
+
+		constructor() { }
+
+	}
